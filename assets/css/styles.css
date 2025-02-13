@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Modal Image */
+.modal-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+/* Caption Text */
+.caption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: red;
+}
+
+
+/* Sticky Valentine's Message */
+.message {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(44, 44, 44, 0.973);
+    padding: 15px 0;
+    z-index: 1000;
+    animation: fadeIn 2s ease-in-out 2s forwards;
+}
+
+.story-container {
+    margin-top: 80px; /* Increase to avoid overlap */
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+
+
+}
+
+.story {
+    min-width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff4081;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Instagram-Style Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    padding: 15px;
+    max-width: 500px;
+    margin-top: 50px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Theater Curtains */
+.theater {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.curtain {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #b71c1c, #d50000);
+    position: absolute;
+    top: 0;
+}
+
+.left {
+    left: 0;
+    animation: open-left 2s ease-in-out forwards;
+}
+
+.right {
+    right: 0;
+    animation: open-right 2s ease-in-out forwards;
+}
+
+@keyframes open-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes open-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    }
+
+    .story-container {
+        width: 95%;
+        padding: 5px;
+    }
+
+    .story {
+        min-width: 60px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+    }
+}
