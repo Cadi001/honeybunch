@@ -2,7 +2,7 @@ const jsConfetti = new JSConfetti();
 
 function launchConfetti() {
     jsConfetti.addConfetti({
-        emojis: ['❤️', '💖', '🎉', '💘', '💞'],
+        emojis: ['❤️', '💖', '🎉', '💘', '💞', '🐝', '🍯'],
         confettiRadius: 8,
         confettiNumber: 80,
         emojiSize: 30,
