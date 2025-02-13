@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
 <body>
+    <audio id="background-audio" src="assets/audio/ElyandAle.mp3" autoplay loop></audio>
     <!-- Theater Opening Effect -->
     <div class="theater">
         <div class="curtain left"></div>
@@ -72,6 +73,14 @@
     </div>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-audio');
+            if (audio) {
+            audio.play().catch(() => console.log("Autoplay blocked, requires user interaction"));
+            }
+      });
+    </script>
    
 </body>
 </html>
